@@ -4,7 +4,6 @@
     box-sizing: border-box;
     font-family: 'Urbanist';
 }
-
 :root{
     --background:#14141F;
     --white: white;
@@ -15,15 +14,14 @@
     --image-background: #7A798A;
     --text-color2: #8A8AA0;
 }
-
 body{
-    max-width: 1410px;
-    margin: 0 auto;
+    max-width: 1440px;
     background-color: var(--background);
 }
-
 header{
+
     display: flex;
+    justify-content: center;
     height: 80px;
 }
 
@@ -96,10 +94,11 @@ ul.list{
     border-radius: 24px;
 }
 
-main{
-    margin-block-start: 132px;
-}
 
+.container_one{
+    padding-block-start: 132px;
+
+}
 .container_one .left h2{
     font-size: 56px;
     line-height: 68px;
@@ -178,6 +177,7 @@ main{
     gap: 30px;
     display: flex;
     overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 .background{
@@ -235,10 +235,14 @@ main{
     color: #8A8AA0;
 }
 .current h3{
+    width: 80px;
     font-size: 18px;
     line-height: 26px;
     font-weight: 700;
     color: var(--white);
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 .div{
@@ -373,8 +377,9 @@ main{
 }
 
 .h_container{
+    width: 100vw;
     height: 216px;
-    background: rgba(20, 20, 31, 0.7);
+    background: RGB(50, 50, 63);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -509,14 +514,94 @@ input, select{
     align-items: center;
 }
 
-/* nft */
+/* nft auction */
 .create__btn, .nft__create{
     margin-block: 30px;
+}
+
+.auctions__scroll-container{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+
 }
 
 .image_container, img{
     width: 290px;
     height: 290px;
     border-radius: 20px;
+}
+
+.auction__scroll-left{
+    width: 12px;
+    height: 12px;
+    background-color: var(--background);
+    border: none;
+    margin-inline-end: 8px;
+    cursor: pointer;
+}
+.auction__scroll-right{
+    width: 12px;
+    height: 12px;
+    background-color: var(--background);
+    border: none;
+    margin-inline-start: 8px;
+    cursor: pointer;
+
+}
+
+.round-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--background);
+    border: 1px solid #FFFFFF;
+    margin-inline: 8px;
+    cursor: pointer;
+
+}
+.center-dot{
+    display: none;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: #FFFFFF;
+}
+
+.dots-parent{
+    margin-top: 2px;
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+}
+.dot-focus{
+    transform: scale(1.5);
+}
+.dot-focus .center-dot{
+    display: block;
+}
+
+/* registerform */
+.signUp_header{
+    background-color: #32323f;
+    width: 100vw;
+}
+.hero_signUp{
+    background-color: #32323f;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.hero_signUp{
+    padding-block-start: 132px;
+
+}
+.hero_signUp h1{
+    color: white;
 }
 

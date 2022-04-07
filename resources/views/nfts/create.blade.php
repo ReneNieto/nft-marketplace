@@ -10,10 +10,10 @@
             <div class="preview">
                 <div class="background">
                     <div class="image_container">
-                
+                        <img  class="preview-img">
                     </div>
                     <div class="text_one">
-                        <h2>Name</h2>
+                        <h2 class="card-name">Name</h2>
                         <span>BSC</span>
                     </div>
                     <div class="text_two">
@@ -23,12 +23,12 @@
                             </div>
                             <div class="creator">
                                 <h2>Creator</h2>
-                                <h3 class="name">Name</h2>
+                                <h3 class="name">{{auth()->user()->name}}</h2>
                             </div>
                         </div>
                         <div class="current">
                             <h2>Current Bid</h2>
-                            <h3>Numbers</h3>
+                            <h3 class="card-price">Price</h3>
                         </div>
                     </div>
                 </div>
@@ -39,19 +39,19 @@
                     
 
                     <label>Upload File
-                        <input name='image' type="file" placeholder="PNG, JPG, GIF, WEBP pr MP4 Max200mb">
+                        <input name='image' class="img-input" type="file" placeholder="PNG, JPG, GIF, WEBP pr MP4 Max200mb">
                     </label>
                     <br>
                     <label>Price
-                        <input name='price' type="text">
+                        <input name='price' class="nft-price" type="text" value="">
                     </label>
                     <br>
                     <label>Name
-                        <input name='name' type="text">
+                        <input name='name' class="nft-name" type="text" value=''>
                     </label>
                     <br>
                     <label>Description
-                        <input name='description' type="text">
+                        <input name='description' class="nft-description" type="text" value="">
                     </label>
                     <br>
                     <div class="inputs_container_two">

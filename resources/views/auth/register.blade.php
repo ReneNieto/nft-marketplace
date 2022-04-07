@@ -1,59 +1,42 @@
-<x-guest-layout>
-    <x-auth-card>
-        <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
-        </x-slot>
-
-        <!-- Validation Errors -->
-        <x-auth-validation-errors class="mb-4" :errors="$errors" />
-
-        <form method="POST" action="{{ route('register') }}">
+@extends('_partials.main')
+@section('main')
+<main>
+    <div class="hero_signUp">
+        <h1>Signup</h1>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/">Pages</a></li>
+            <li><a href="/">Signup</a></li> 
+        </ul>
+    </div>
+    <section class="sign_form">
+        <h2>Sigup to NFTs</h2>
+        <form  method="POST" action="{{ route('register') }}" class="register-form">
             @csrf
 
-            <!-- Name -->
-            <div>
-                <x-label for="name" :value="__('Name')" />
-
-                <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
+            <label>
+                <input name="name" type="text" placeholder="Your full name " class="input">
+            </label>
+            <label>
+                <input name="email" type="email" placeholder="Your email address" class="input">
+            </label>
+            <label>
+                <input name="password" required type="password" placeholder="Set your password" class="input">
+            </label>
+            <label>
+                <input name="password_confirmation" type="password" required autocomplete="new-password" placeholder="Confirm your password" class="input">
+            </label>
+            <div class="forgot_password">
+                <label>
+                    <input type="checkbox" class="checkbox" class="checkbox">
+                    Remember me
+                </label>
+               
+                <a href="{{route('login')}}">Already register?</a>
             </div>
-
-            <!-- Email Address -->
-            <div class="mt-4">
-                <x-label for="email" :value="__('Email')" />
-
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
-            </div>
-
-            <!-- Password -->
-            <div class="mt-4">
-                <x-label for="password" :value="__('Password')" />
-
-                <x-input id="password" class="block mt-1 w-full"
-                                type="password"
-                                name="password"
-                                required autocomplete="new-password" />
-            </div>
-
-            <!-- Confirm Password -->
-            <div class="mt-4">
-                <x-label for="password_confirmation" :value="__('Confirm Password')" />
-
-                <x-input id="password_confirmation" class="block mt-1 w-full"
-                                type="password"
-                                name="password_confirmation" required />
-            </div>
-
-            <div class="flex items-center justify-end mt-4">
-                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
-                    {{ __('Already registered?') }}
-                </a>
-
-                <x-button class="ml-4">
-                    {{ __('Register') }}
-                </x-button>
-            </div>
+           
+            <button type="submit" class="primary_button">Login</button>
         </form>
-    </x-auth-card>
-</x-guest-layout>
+    </section>
+</main>
+@endsection
